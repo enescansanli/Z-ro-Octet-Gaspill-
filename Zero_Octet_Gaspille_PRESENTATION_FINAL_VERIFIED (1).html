@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Zéro Octet Gaspillé – Présentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #94DEA5;
+      color: #023D54;
+      font-size: 40px;
+      overflow: hidden;
+    }
+    .slide {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 5vh 7vw;
+      height: 100vh;
+      text-align: center;
+    }
+    .slide.active {
+      display: flex;
+    }
+    h1, h2 {
+      color: #065f46;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+    p, li {
+      max-width: 1000px;
+      margin: 1rem 0;
+      line-height: 1.8;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li::before {
+      content: '🌿 ';
+    }
+    .logo {
+      width: 100px;
+      margin: 1.5rem 0;
+    }
+    .image {
+      width: 80%;
+      max-width: 900px;
+      border: 4px solid #065f46;
+      margin: 2rem 0;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 2rem;
+      font-size: 1rem;
+      width: 95%;
+    }
+    th, td {
+      border: 1px solid #4b5563;
+      padding: 10px 14px;
+    }
+    th {
+      background-color: #d1fae5;
+    }
+    .controls {
+      position: fixed;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 5vw;
+      background: rgba(255,255,255,0.95);
+    }
+    .controls button {
+      background-color: #065f46;
+      color: #94DEA5;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .popup {
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border: 3px solid #10b981;
+      padding: 30px;
+      z-index: 999;
+      display: none;
+    }
+    .popup button {
+      margin-top: 20px;
+      background: #10b981;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="popup" id="popup">
+  <div id="popup-content"></div>
+  <button onclick="closePopup()">Fermer</button>
+</div>
+
+<!-- Slaytlar -->
+<div class="slide active">
+  <h1>Bienvenue à</h1>
+  <h2>Zéro Octet Gaspillé</h2>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Green_leaf_icon.svg/512px-Green_leaf_icon.svg.png" alt="logo" class="logo">
+  <p><em>« La pollution invisible est bien réelle »</em></p>
+</div>
+
+<div class="slide">
+  <h2>Manifeste</h2>
+  <p>Nous vivons dans un monde saturé de données. Chaque seconde, des milliards d’octets sont produits, stockés, oubliés. Ces données — mails inutiles, photos en double, vidéos jamais regardées — ne sont pas immatérielles. Elles nécessitent des serveurs, de l’électricité, des métaux rares. Et ces infrastructures ont un coût : environnemental, énergétique et humain.</p>
+  <p>Chez Zéro Octet Gaspillé, nous disons stop au gaspillage numérique. Notre planète ne peut plus supporter un stockage sans conscience. Nous appelons à une sobriété numérique : trier ses fichiers, supprimer l’inutile, limiter les sauvegardes automatiques, et surtout, réfléchir avant de cliquer. Chaque octet évité est une goutte d’eau économisée, un arbre épargné, un souffle pour demain.</p>
+</div>
+
+<div class="slide">
+  <h2>Notre Affiche</h2>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Digital_pollution_poster_sample.png/800px-Digital_pollution_poster_sample.png" class="image">
+  <p>Cette affiche représente le poids caché de nos données. Sous chaque icône familière, une ombre numérique polluante se cache. Un rappel que même le virtuel laisse une empreinte bien réelle.</p>
+</div>
+
+<div class="slide">
+  <h2>Fiche Lexicale Thématique</h2>
+  <table>
+    <tr><th>Nom</th><th>Verbe</th><th>Adjectif</th><th>Synonyme</th><th>Antonyme</th><th>Définition</th></tr>
+    <tr><td>la donnée</td><td>stocker</td><td>numérique</td><td>information</td><td>vide</td><td><button onclick="showDefinition('Unité d’information numérique')">📘</button></td></tr>
+    <tr><td>le serveur</td><td>héberger</td><td>centralisé</td><td>centre informatique</td><td>ordinateur personnel</td><td><button onclick="showDefinition('Ordinateur puissant qui héberge des données')">📘</button></td></tr>
+    <tr><td>le cloud</td><td>sauvegarder</td><td>virtuel</td><td>nuage</td><td>stockage physique</td><td><button onclick="showDefinition('Stockage de données en ligne via Internet')">📘</button></td></tr>
+    <tr><td>la pollution numérique</td><td>polluer</td><td>invisible</td><td>contamination</td><td>propreté</td><td><button onclick="showDefinition('Pollution liée à l’usage intensif du numérique')">📘</button></td></tr>
+    <tr><td>l’empreinte carbone</td><td>émettre</td><td>carboné</td><td>trace écologique</td><td>neutralité carbone</td><td><button onclick="showDefinition('Quantité de CO₂ émise par une activité')">📘</button></td></tr>
+  </table>
+</div>
+
+<div class="slide">
+  <h2>Présentation Orale Complète</h2>
+  <p>Bonjour à toutes et à tous, je m’appelle Enes Can Şanlı. Aujourd’hui, je représente l’association imaginaire Zéro Octet Gaspillé. Notre objectif ? Sensibiliser le public à une forme de pollution moderne, silencieuse mais croissante : la pollution numérique causée par les mégadonnées.</p>
+  <p>Chaque jour, nous produisons des milliards de données — mails, vidéos, photos. Ces données sont stockées dans des data centers qui consomment plus d’électricité que l’aviation civile. Cette pollution est invisible, mais bien réelle.</p>
+  <p>Les conséquences sont alarmantes : émissions de CO₂, épuisement des ressources naturelles, production massive de déchets électroniques. Par exemple, un mail avec pièce jointe peut produire jusqu’à 50g de CO₂. Les data centers représentent déjà 4% de la consommation électrique mondiale, et ce chiffre pourrait doubler d’ici 2030.</p>
+  <p>Face à cela, nous proposons des solutions simples mais efficaces : supprimer les fichiers inutiles, limiter les sauvegardes automatiques, réduire la qualité du streaming, utiliser des moteurs de recherche comme Ecosia. Nous encourageons aussi à organiser des journées de nettoyage numérique.</p>
+  <p>Conclusion : La transition écologique ne se fera pas uniquement dans les champs ou les forêts. Elle doit aussi se faire dans nos téléphones, nos ordinateurs, nos disques durs. Avec Zéro Octet Gaspillé, nous croyons en un numérique plus sobre, plus propre, plus conscient. Merci.</p>
+</div>
+
+<div class="slide">
+  <h2>Merci pour votre attention 💚</h2>
+  <p>Email : contact@zerooctet.org</p>
+  <p>Instagram : @zero.octet.gaspille</p>
+  <p>Chaque octet économisé, c’est une planète qui respire mieux.</p>
+</div>
+
+<!-- Butonlar -->
+<div class="controls">
+  <button onclick="prevSlide()">⬅ Précédent</button>
+  <button onclick="nextSlide()">Suivant ➡</button>
+</div>
+
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll('.slide');
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+  function nextSlide() {
+    if (current < slides.length - 1) {
+      current++;
+      showSlide(current);
+    }
+  }
+  function prevSlide() {
+    if (current > 0) {
+      current--;
+      showSlide(current);
+    }
+  }
+  function showDefinition(text) {
+    const popup = document.getElementById('popup');
+    document.getElementById('popup-content').innerText = text;
+    popup.style.display = 'block';
+  }
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+  }
+</script>
+</body>
+</html>
